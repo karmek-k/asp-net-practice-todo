@@ -1,16 +1,20 @@
-﻿@{
+﻿@model IEnumerable<TodoList>
+@{
     ViewData["Title"] = "Home";
 }
 
-<h1>Hello world!</h1>
-<p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet pretium leo. Maecenas viverra elementum purus ac tempor. Pellentesque in aliquam leo. Praesent et risus nunc. Suspendisse dignissim metus sed velit vulputate, nec varius enim ultrices. Proin vel libero feugiat, dictum tellus non, ornare risus. Praesent cursus lectus vel feugiat tincidunt. Praesent condimentum ultricies sem, et scelerisque sapien consectetur id. Pellentesque tincidunt neque et pellentesque euismod. Nunc in felis varius, blandit odio sit amet, rhoncus risus.
+<h1>Practice To-do</h1>
 
-    Praesent sollicitudin est tellus, et molestie tellus scelerisque sed. Mauris vel urna scelerisque, pretium orci sed, vulputate sem. Aenean a elementum nulla. Donec diam urna, lacinia quis blandit eleifend, posuere vitae augue. Donec egestas porta risus vitae ultricies. Sed porta velit nec nulla elementum fringilla. Nam eu purus nunc. Mauris vestibulum nibh non quam rutrum congue. Nam malesuada elit in diam congue viverra. Nunc sed laoreet ipsum, ut blandit purus. Donec aliquet, sapien ac convallis fermentum, diam lorem auctor mauris, venenatis cursus massa leo quis velit. Maecenas finibus, ante commodo congue mollis, lacus lectus condimentum tortor, ac placerat nibh mauris at purus. Curabitur sed quam elementum, pulvinar quam eu, molestie ex. Proin in viverra libero, sed finibus lorem. Nam nec scelerisque sem, in condimentum massa. Sed sagittis blandit sapien quis ultrices.
-
-    Nulla iaculis aliquam vulputate. Vestibulum id consectetur libero, ac pretium quam. Phasellus vitae ex mollis, finibus tellus convallis, laoreet mauris. Pellentesque nec fermentum mi, sed tincidunt est. Vivamus eros ante, eleifend vitae turpis sit amet, pretium rutrum mauris. Morbi sit amet elit eget ipsum efficitur ullamcorper vitae pharetra leo. Etiam viverra massa congue, accumsan mauris id, pretium risus.
-
-    Vestibulum euismod tempor vulputate. Sed mi nisi, vestibulum in sollicitudin eget, tincidunt eu ligula. Phasellus ac ex et metus ultricies blandit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla egestas luctus ante eu luctus. Nullam massa metus, suscipit a erat sed, sagittis tristique tellus. Praesent consequat non leo vel iaculis. Nunc libero nibh, blandit at interdum eget, ullamcorper ac velit. Nam finibus auctor lorem, dapibus semper ex ullamcorper vitae. Nunc tortor ligula, feugiat non turpis id, sollicitudin ultrices felis. Nam a lobortis ligula, a semper purus. In ut urna et mi gravida vestibulum in vel magna.
-
-    Vestibulum mauris massa, eleifend non porta vitae, cursus et mauris. Praesent congue placerat urna sed gravida. In lobortis a erat vel sollicitudin. Morbi maximus id ligula sit amet pellentesque. Vestibulum pellentesque velit nisl, nec placerat est dictum blandit. Morbi ligula libero, molestie sed quam et, lacinia bibendum risus. Phasellus pulvinar nisi et nunc posuere dapibus. Proin ut pellentesque sapien.
-</p>
+@if (Model.Any())
+{
+    <ol>
+        @foreach (var list in Model)
+        {
+            <li>@list.Name</li>
+        }
+    </ol>
+}
+else
+{
+    <i>No lists</i>
+}
