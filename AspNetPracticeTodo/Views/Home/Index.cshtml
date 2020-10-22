@@ -10,7 +10,7 @@
     <ol>
         @foreach (var list in Model)
         {
-            <li>@list.Name</li>
+            <li>@Html.DisplayFor(m => list.Name)</li>
         }
     </ol>
 }
