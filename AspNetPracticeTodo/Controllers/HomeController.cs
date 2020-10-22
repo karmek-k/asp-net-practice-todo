@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using AspNetPracticeTodo.Models;
 using AspNetPracticeTodo.Data;
-using Microsoft.EntityFrameworkCore.Internal;
-using System.Text;
 
 namespace AspNetPracticeTodo.Controllers
 {
