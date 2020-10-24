@@ -5,8 +5,29 @@
     font-size: 14pt;
 }
 
+a {
+    text-decoration: none;
+}
+
 .container {
     max-width: 800px;
     margin: auto;
     margin-top: 3rem;
+}
+
+table {
+    width: 100%;
+}
+
+table td,
+table th {
+    padding: 8px;
+}
+
+.item-done {
+    color: green;
+}
+
+.item-undone {
+    color: red;
 }

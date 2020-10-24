@@ -10,7 +10,11 @@
     <ol>
         @foreach (var list in Model)
         {
-            <li>@Html.DisplayFor(m => list.Name)</li>
+            <li>
+                <a asp-controller="List" asp-action="Index" asp-route-id="@list.TodoListId">
+                    @Html.DisplayFor(m => list.Name)
+                </a>
+            </li>
         }
     </ol>
 }
