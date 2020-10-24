@@ -20,13 +20,13 @@ namespace AspNetPracticeTodo.Controllers
         public IActionResult Index(int id)
         {
             var todoList = _db.TodoLists
-                .Include("TodoItems")
+                .Include("TodoItems")  // TODO: remove if not needed
                 .Where(list => list.TodoListId == id)
                 .FirstOrDefault();
 
             if (todoList == null)
             {
-                return RedirectToAction("Index", "HomeCOntroller");
+                return RedirectToAction("Index", "Home");
             }
 
             return View(todoList);
