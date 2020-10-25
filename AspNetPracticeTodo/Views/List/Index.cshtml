@@ -1,8 +1,4 @@
 ﻿@model IList<TodoItem>
-@{
-    var todoItem = Model.FirstOrDefault();
-    ViewData["TodoListDesc"] = todoItem != null ? todoItem.TodoList.Description : "No description";
-}
 
 <h1>@ViewData["Title"] - To-do items</h1>
 <p>@ViewData["TodoListDesc"]</p>
