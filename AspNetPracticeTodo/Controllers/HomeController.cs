@@ -52,6 +52,20 @@ namespace AspNetPracticeTodo.Controllers
             return View(todoList);
         }
 
+        [HttpPost]
+        public IActionResult EditList(TodoList newList)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(newList);
+            }
+
+            _db.TodoLists.Update(newList);
+            _db.SaveChanges();
+
+            return RedirectToAction("Index", "List", new { id = newList.TodoListId });
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
