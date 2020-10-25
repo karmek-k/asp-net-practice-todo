@@ -25,6 +25,7 @@ namespace AspNetPracticeTodo.Controllers
                 .FirstOrDefault();
 
             ViewData["Title"] = todoList.Name;
+            ViewData["TodoListDesc"] = todoList.Description ?? "No description";
 
             if (todoList == null)
             {
