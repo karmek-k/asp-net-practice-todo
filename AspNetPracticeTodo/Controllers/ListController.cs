@@ -25,17 +25,15 @@ namespace AspNetPracticeTodo.Controllers
                 .Where(list => list.TodoListId == id)
                 .FirstOrDefault();
 
-            ViewData["Title"] = todoList.Name;
-            ViewData["TodoListDesc"] = todoList.Description ?? "No description";
-
             if (todoList == null)
             {
                 return RedirectToAction("Index", "Home");
             }
 
-            var todoItems = todoList.TodoItems.ToList();
+            ViewData["Title"] = todoList.Name;
+            ViewData["TodoListDesc"] = todoList.Description ?? "No description";
 
-            return View(todoItems);
+            return View(todoList);
         }
 
         public IActionResult CreateList()
