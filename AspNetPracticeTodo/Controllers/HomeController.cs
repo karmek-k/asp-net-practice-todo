@@ -66,6 +66,15 @@ namespace AspNetPracticeTodo.Controllers
             return RedirectToAction("Index", "List", new { id = newList.TodoListId });
         }
 
+        public IActionResult DeleteList(int id)
+        {
+            var todoList = _db.TodoLists
+                .Where(list => list.TodoListId == id)
+                .FirstOrDefault();
+
+            return View(todoList);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
