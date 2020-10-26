@@ -3,6 +3,8 @@
 <h1>@ViewData["Title"] - To-do items</h1>
 <p>@ViewData["TodoListDesc"]</p>
 
+<a asp-action="EditList" asp-route-id="@Model.TodoListId">Edit list</a> -
+<a asp-action="DeleteList" asp-route-id="@Model.TodoListId">Delete list</a>
 <table>
     <tr>
         <th>
