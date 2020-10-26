@@ -24,25 +24,6 @@ namespace AspNetPracticeTodo.Controllers
             return View(lists);
         }
 
-        public IActionResult CreateList()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult CreateList(TodoList list)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View();
-            }
-
-            _db.TodoLists.Add(list);
-            _db.SaveChanges();
-
-            return RedirectToAction("Index");
-        }
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
