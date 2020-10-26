@@ -24,57 +24,6 @@ namespace AspNetPracticeTodo.Controllers
             return View(lists);
         }
 
-        public IActionResult CreateList()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult CreateList(TodoList list)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View();
-            }
-
-            _db.TodoLists.Add(list);
-            _db.SaveChanges();
-
-            return RedirectToAction("Index");
-        }
-
-        public IActionResult EditList(int id)
-        {
-            var todoList = _db.TodoLists
-                .Where(list => list.TodoListId == id)
-                .FirstOrDefault();
-
-            return View(todoList);
-        }
-
-        [HttpPost]
-        public IActionResult EditList(TodoList newList)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View(newList);
-            }
-
-            _db.TodoLists.Update(newList);
-            _db.SaveChanges();
-
-            return RedirectToAction("Index", "List", new { id = newList.TodoListId });
-        }
-
-        public IActionResult DeleteList(int id)
-        {
-            var todoList = _db.TodoLists
-                .Where(list => list.TodoListId == id)
-                .FirstOrDefault();
-
-            return View(todoList);
-        }
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

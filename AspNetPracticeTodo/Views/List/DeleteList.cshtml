@@ -8,4 +8,4 @@
 <p>Are you sure that you want to delete @Html.DisplayFor(m => m.Name)?</p>
 
 <a asp-controller="List" asp-action="Index" asp-route-id="@Model.TodoListId">No</a> -
-<a asp-action="DeleteList" asp-route-id="@Model.TodoListId">Yes</a>
+<a asp-action="DeleteList" asp-route-id="@Model.TodoListId" asp-route-confirmed="true">Yes</a>
